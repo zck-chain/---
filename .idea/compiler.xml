@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for onlinexue-content" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../../Maven/apache-maven-3.6.1/mvn_resp/org/projectlombok/lombok/1.18.8/lombok-1.18.8.jar" />
+        </processorPath>
+        <module name="onlinexue-content-model" />
+        <module name="onlinexue-user-service" />
+        <module name="onlinexue-content-api" />
+        <module name="onlinexue-media-model" />
+        <module name="onlinexue-content-service" />
+        <module name="onlinexue-media-service" />
+        <module name="onlinexue-user-model" />
+        <module name="onlinexue-user-api" />
+        <module name="onlinexue-media-api" />
+        <module name="onlinexue-gateway" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="11">
+      <module name="onlinexue-system" target="11" />
+      <module name="xuecheng-plus-system" target="1.8" />
+      <module name="xuecheng-plus-system-api" target="1.8" />
+      <module name="xuecheng-plus-system-model" target="1.8" />
+      <module name="xuecheng-plus-system-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

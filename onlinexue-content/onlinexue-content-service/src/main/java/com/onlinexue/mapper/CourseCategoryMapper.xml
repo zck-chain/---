@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.onlinexue.mapper.CourseCategoryMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.onlinexue.model.dao.CourseCategory">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="label" property="label"/>
+        <result column="parentid" property="parentid"/>
+        <result column="is_show" property="isShow"/>
+        <result column="orderby" property="orderby"/>
+        <result column="is_leaf" property="isLeaf"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, label, parentid, is_show, orderby, is_leaf
+    </sql>
+
+    <select id="selectTreeNodes" parameterType="string" resultType="com.onlinexue.model.dto.CourseCategoryTreeDto">
+        SELECT t1.id, t1.name, t1.label, t1.parentid, t1.is_show, t1.orderby, t1.is_leaf
+        FROM course_category t1
+                 JOIN (SELECT id
+                       FROM course_category
+                       WHERE id = #{id}
+                       UNION ALL
+                       SELECT cc.id
+                       FROM course_category cc
+                                JOIN course_category c on cc.parentid = c.id) t2 ON t1.id = t2.id;
+    </select>
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.onlinexue</groupId>
+        <artifactId>onlinexue-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../onlinexue-parent</relativePath>
+    </parent>
+    <artifactId>onlinexue-user</artifactId>
+    <name>onlinexue-user</name>
+    <description>onlinexue-user</description>
+    <packaging>pom</packaging>
+    <modules>
+        <module>onlinexue-user-model</module>
+        <module>onlinexue-user-service</module>
+        <module>onlinexue-user-api</module>
+    </modules>
+
+</project>

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: media-api #服务名
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://1.94.21.227:3306/onlinexue_user?characterEncoding=utf-8
+    password: 123456
+    username: root

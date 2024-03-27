@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/onlinexue-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-base/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-content/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-media/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/onlinexue-system-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-system/xuecheng-plus-system-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-model/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/onlinexue-user/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

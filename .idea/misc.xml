@@ -1,0 +1,38 @@
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/onlinexue-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-base/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-user/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-user/onlinexue-user-api/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-user/onlinexue-user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-user/onlinexue-user-model/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-geteway/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-media/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-media/onlinexue-media-model/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-media/onlinexue-media-service/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-media/onlinexue-media-api/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-content/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-content/onlinexue-content-model/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-content/onlinexue-content-service/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-content/onlinexue-content-api/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-system/pom.xml" />
+        <option value="$PROJECT_DIR$/xuecheng-plus-system/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/onlinexue-system/onlinexue-system-api/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-system/onlinexue-system-model/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-system/onlinexue-system-service/pom.xml" />
+        <option value="$PROJECT_DIR$/onlinexue-system/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

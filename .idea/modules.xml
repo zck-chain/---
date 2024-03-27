@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-base/onlinexue-base.iml" filepath="$PROJECT_DIR$/onlinexue-base/onlinexue-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content.iml" filepath="$PROJECT_DIR$/onlinexue-content/onlinexue-content.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-api/onlinexue-content-api.iml" filepath="$PROJECT_DIR$/onlinexue-content/onlinexue-content-api/onlinexue-content-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-model/onlinexue-content-model.iml" filepath="$PROJECT_DIR$/onlinexue-content/onlinexue-content-model/onlinexue-content-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-content/onlinexue-content-service/onlinexue-content-service.iml" filepath="$PROJECT_DIR$/onlinexue-content/onlinexue-content-service/onlinexue-content-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-gateway/onlinexue-gateway.iml" filepath="$PROJECT_DIR$/onlinexue-gateway/onlinexue-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media.iml" filepath="$PROJECT_DIR$/onlinexue-media/onlinexue-media.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-api/onlinexue-media-api.iml" filepath="$PROJECT_DIR$/onlinexue-media/onlinexue-media-api/onlinexue-media-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-model/onlinexue-media-model.iml" filepath="$PROJECT_DIR$/onlinexue-media/onlinexue-media-model/onlinexue-media-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-media/onlinexue-media-service/onlinexue-media-service.iml" filepath="$PROJECT_DIR$/onlinexue-media/onlinexue-media-service/onlinexue-media-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-parent/onlinexue-parent.iml" filepath="$PROJECT_DIR$/onlinexue-parent/onlinexue-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user.iml" filepath="$PROJECT_DIR$/onlinexue-user/onlinexue-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-api/onlinexue-user-api.iml" filepath="$PROJECT_DIR$/onlinexue-user/onlinexue-user-api/onlinexue-user-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-model/onlinexue-user-model.iml" filepath="$PROJECT_DIR$/onlinexue-user/onlinexue-user-model/onlinexue-user-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/onlinexue-user/onlinexue-user-service/onlinexue-user-service.iml" filepath="$PROJECT_DIR$/onlinexue-user/onlinexue-user-service/onlinexue-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/onlinexue-zck.iml" filepath="$PROJECT_DIR$/.idea/onlinexue-zck.iml" />
+    </modules>
+  </component>
+</project>
