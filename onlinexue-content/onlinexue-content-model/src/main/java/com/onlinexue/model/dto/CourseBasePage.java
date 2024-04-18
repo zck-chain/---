@@ -17,4 +17,6 @@ public class CourseBasePage {
     public long total;//分页总数
     public List<Integer> pages;
     public List<CoursePublish> recordsPush;
+
+
 }

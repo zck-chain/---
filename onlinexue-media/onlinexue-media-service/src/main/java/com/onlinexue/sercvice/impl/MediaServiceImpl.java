@@ -4,6 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import com.j256.simplemagic.ContentInfo;
 import com.j256.simplemagic.ContentInfoUtil;
 import com.onlinexue.dto.Result;
+import com.onlinexue.model.dto.VideoVo;
 import com.onlinexue.sercvice.MediaService;
 import io.minio.MinioClient;
 import io.minio.RemoveObjectArgs;
@@ -22,9 +23,7 @@ import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import static com.onlinexue.util.MinioUtils.BUCKET_MEDIAFILES;
-import static com.onlinexue.util.MinioUtils.BUCKET_VIDEOFILES;
-import static com.onlinexue.util.RedisConstants.LOGIN_USER_KEY;
+import static com.onlinexue.util.MinioUtils.*;
 
 @Slf4j
 @Component
@@ -54,13 +53,6 @@ public class MediaServiceImpl implements MediaService {
 
     //将文件上传到minio
     public Result upload(MultipartFile file, String id, String status, HttpServletRequest request) {
-        if (id == null) {
-            //表示用户的
-            String token = request.getHeader("token");
-            String tokenKey = LOGIN_USER_KEY + token;
-            id = String.valueOf(stringRedisTemplate.opsForHash().get(tokenKey, "id"));//拿到用户id
-            String oldiconUrl = String.valueOf(stringRedisTemplate.opsForHash().get(tokenKey, "icon"));//拿到自己原来的iconurl
-        }
         String filename = file.getOriginalFilename();
         //得到扩张名
         String extension = filename.substring(filename.lastIndexOf("."));//.jpg
@@ -86,7 +78,7 @@ public class MediaServiceImpl implements MediaService {
             e.printStackTrace();
             log.error("上传文件出错,bucket:{},objectName:{},错误信息:{}", BUCKET_MEDIAFILES, objectName, e.getMessage());
         }
-        return Result.ok(BUCKET_MEDIAFILES + "/" + objectName);
+        return Result.ok(MINIO_PATH + BUCKET_MEDIAFILES + "/" + objectName);
     }
 
     public String getloaclFile(MultipartFile file) {
@@ -139,7 +131,7 @@ public class MediaServiceImpl implements MediaService {
             e.printStackTrace();
             log.error("上传文件出错,bucket:{},objectName:{},错误信息:{}", BUCKET_VIDEOFILES, objectName, e.getMessage());
         }
-        return Result.ok(BUCKET_VIDEOFILES + "/" + objectName);
+        return Result.ok(new VideoVo(MINIO_PATH + BUCKET_VIDEOFILES + "/" + objectName, originalFilename));
     }
 
     //根据扩展名获取mimeType

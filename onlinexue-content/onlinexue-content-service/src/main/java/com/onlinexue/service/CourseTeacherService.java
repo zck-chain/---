@@ -3,6 +3,7 @@ package com.onlinexue.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.onlinexue.dto.Result;
 import com.onlinexue.model.dao.CourseTeacher;
+import com.onlinexue.model.dto.FormInline;
 
 public interface CourseTeacherService extends IService<CourseTeacher> {
     /**
@@ -23,4 +24,8 @@ public interface CourseTeacherService extends IService<CourseTeacher> {
 
 
     Result getPopularTeacherList();
+
+    Result getTeacherList(FormInline formInline);
+
+    Result getTeacherById(String teacherId);
 }

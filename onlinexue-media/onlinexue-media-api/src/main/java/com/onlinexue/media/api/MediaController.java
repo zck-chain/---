@@ -17,15 +17,10 @@ public class MediaController {
     @Autowired
     private BannerService bannerService;
 
-    //上传用户头像
-//    @PostMapping("/uploadIcon")
-//    public Result uploadIcon(@RequestParam("file")MultipartFile file,HttpServletRequest request){
-//        return mediaService.uploadIcon(file,request);
-//    }
 
     //上传图片
     @PostMapping("/upload/{id}")
-    public Result upload(@RequestParam("file") MultipartFile file, @PathVariable("id") String id, @RequestParam String status, HttpServletRequest request) {
+    public Result upload(@RequestParam("file") MultipartFile file, @PathVariable("id") String id, @RequestParam(defaultValue = "userIcon") String status, HttpServletRequest request) {
         return mediaService.upload(file, id, status, request);
     }
 

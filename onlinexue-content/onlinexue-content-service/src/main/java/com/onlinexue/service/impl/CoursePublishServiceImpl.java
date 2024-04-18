@@ -3,6 +3,7 @@ package com.onlinexue.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -10,11 +11,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.onlinexue.dto.Result;
 import com.onlinexue.mapper.CoursePublishMapper;
-import com.onlinexue.model.dao.CourseBase;
-import com.onlinexue.model.dao.CourseMarket;
-import com.onlinexue.model.dao.CoursePublish;
-import com.onlinexue.model.dao.CourseTeacher;
+import com.onlinexue.model.dao.*;
 import com.onlinexue.model.dto.CourseBasePage;
+import com.onlinexue.model.dto.CourseChapterDto;
 import com.onlinexue.model.dto.FormInline;
 import com.onlinexue.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -45,6 +45,9 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private CourseCategoryService courseCategoryService;
+
+    @Autowired
+    private CourseChapterService courseChapterService;//课程视频信息
 
     @Override
     @Transactional
@@ -126,7 +129,13 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         String st = coursePublish.getSt();//一级
         String stName = courseCategoryService.getById(st).getName();
         coursePublish.setSt(stName);
-        return Result.ok(coursePublish);
+        List<CourseChapter> courseChapterList = courseChapterService.list(new LambdaQueryWrapper<CourseChapter>().eq(CourseChapter::getCourseId, id));//课程信息
+        List<CourseChapterDto> courseChapterDtoList = CourseChapterServiceImpl.getCourseChapterDtoList(courseChapterList);
+        courseChapterDtoList.stream().sorted(Comparator.comparing(CourseChapterDto::getSort));
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.set("Coursedata", coursePublish);
+        jsonObject.set("chapterVideoList", courseChapterDtoList);
+        return Result.ok(jsonObject);
     }
 
     @Override

@@ -73,7 +73,6 @@ public class CourseCategoryServiceImpl extends ServiceImpl<CourseCategoryMapper,
                 parent.getChildrenTreeNodes().add(courseCategoryTreeDto);
             }
         }
-        //List<CourseCategoryTreeDto> courseCategoryTreeDtos = buildTree(categoryTreeDtoList, id);
         return Result.ok(courseCategoryTreeDtoList);
     }
 

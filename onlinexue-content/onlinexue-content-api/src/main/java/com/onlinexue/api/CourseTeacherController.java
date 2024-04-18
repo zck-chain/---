@@ -2,6 +2,7 @@ package com.onlinexue.api;
 
 import com.onlinexue.dto.Result;
 import com.onlinexue.model.dao.CourseTeacher;
+import com.onlinexue.model.dto.FormInline;
 import com.onlinexue.service.CourseTeacherService;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,5 +41,16 @@ public class CourseTeacherController {
     @GetMapping("/index/getPopularTeacherList")
     public Result getPopularTeacherList() {
         return courseTeacherService.getPopularTeacherList();
+    }
+
+
+    @PostMapping("/front/get/teacher/list")
+    public Result getTeacherList(@RequestBody FormInline formInline) {
+        return courseTeacherService.getTeacherList(formInline);
+    }
+
+    @GetMapping("/front/get/teacher/info/{id}")
+    public Result getTeacherById(@PathVariable("id") String teacherId) {
+        return courseTeacherService.getTeacherById(teacherId);
     }
 }

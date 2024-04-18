@@ -168,8 +168,11 @@ public class CourseBaseServiceImpl extends ServiceImpl<CourseBaseMapper, CourseB
         updateById(courseBase);//更新课程信息
         //更新课程价格表
         CourseMarket courseMarket = new CourseMarket();
-        BeanUtil.copyProperties(coursePublish, courseMarket);
-        courseMarketService.updateById(courseMarket);
+        courseMarket.setCourseId(courseBase.getId());
+        courseMarket.setOriginalPrice(coursePublish.getOriginalPrice());
+        courseMarket.setPrice(coursePublish.getPrice());
+        courseMarket.setValidDays(coursePublish.getValidDays());
+        courseMarketService.saveOrUpdate(courseMarket, new LambdaQueryWrapper<CourseMarket>().eq(CourseMarket::getCourseId, courseBase.getId()));
         return Result.ok();
     }
 

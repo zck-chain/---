@@ -7,6 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 /**
  * <p>
@@ -68,6 +69,21 @@ public class CourseTeacher implements Serializable {
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime changeDate;
+
+
+    // 重写 equals 和 hashCode 方法，以便在比较对象时使用
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CourseTeacher myClass = (CourseTeacher) o;
+        return Objects.equals(teacherName, myClass.teacherName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(teacherName);
+    }
 
 
 }
