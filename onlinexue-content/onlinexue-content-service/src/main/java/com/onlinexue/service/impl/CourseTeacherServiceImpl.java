@@ -95,10 +95,14 @@ public class CourseTeacherServiceImpl extends ServiceImpl<CourseTeacherMapper, C
      */
     @Override
     public Result getTeacherList(FormInline formInline) {
+        String selectname = formInline.getSelectname();
         int current = formInline.getPage();
         int limit = formInline.getLimit();
         Page page = new Page<CourseTeacher>(current, limit);
         LambdaQueryWrapper<CourseTeacher> wrapper = new LambdaQueryWrapper<>();
+        if (!StrUtil.isEmpty(selectname)) {
+            wrapper.eq(CourseTeacher::getPosition, selectname);
+        }
         Page teacherPage = page(page, wrapper);
         Map<String, Object> map = new HashMap<>();
         long total = teacherPage.getTotal();

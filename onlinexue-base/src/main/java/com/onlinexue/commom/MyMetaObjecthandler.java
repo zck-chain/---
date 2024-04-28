@@ -3,6 +3,8 @@ package com.onlinexue.commom;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -13,6 +15,8 @@ import java.time.LocalDateTime;
 @Component
 @Slf4j
 public class MyMetaObjecthandler implements MetaObjectHandler {
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * 插入时自动填充
@@ -24,7 +28,6 @@ public class MyMetaObjecthandler implements MetaObjectHandler {
         log.info("公共字段自动填充[insert]...");
         metaObject.setValue("createDate", LocalDateTime.now());
         metaObject.setValue("changeDate", LocalDateTime.now());
-
     }
 
     /**
@@ -37,4 +40,6 @@ public class MyMetaObjecthandler implements MetaObjectHandler {
         long id = Thread.currentThread().getId();
         metaObject.setValue("changeDate", LocalDateTime.now());
     }
+
+
 }

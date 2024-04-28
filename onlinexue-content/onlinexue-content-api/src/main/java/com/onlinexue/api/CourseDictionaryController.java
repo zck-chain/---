@@ -30,4 +30,9 @@ public class CourseDictionaryController {
     public Result getcourseTeachmode() {
         return courseDictionaryService.getcourseTeachmode();
     }
+
+    @GetMapping("/teacher-grade")
+    public Result getTeacherGrade() {
+        return courseDictionaryService.getTeacherGrade();
+    }
 }

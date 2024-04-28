@@ -1,0 +1,100 @@
+2024-04-14 21:11:25,534 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=media-service-dev.yamlonlinexue-projecte94345267cf47da502fea6e0bd78a209devmedia-api-dev.yamlonlinexue-project2b054e547e03b960f5ede5a835394ac6devlogging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devmedia-apionlinexue-projectdevmedia-api.yamlonlinexue-projectdevredis-dev.yamlonlinexue-common73f3b33212e6909444e8afd6062a1f2ddev, tenant=dev}
+2024-04-14 21:11:25,533 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=logging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devgatewayonlinexue-projectdevgateway.yamlonlinexue-projectdevgateway-dev.yamlonlinexue-project4e26812d071916ee95f47767c84d25b4dev, tenant=dev}
+2024-04-14 21:11:25,533 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=logging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devgatewayonlinexue-projectdevgateway.yamlonlinexue-projectdevgateway-dev.yamlonlinexue-project4e26812d071916ee95f47767c84d25b4dev, tenant=dev}
+2024-04-14 21:11:25,630 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:327] - Cannot reconnect to [192.168.239.129:6379]: Reconnection attempt exceeded timeout of 60 SECONDS 
+java.util.concurrent.TimeoutException: Reconnection attempt exceeded timeout of 60 SECONDS 
+	at io.lettuce.core.protocol.ReconnectionHandler.lambda$reconnect0$6(ReconnectionHandler.java:203)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:106)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:66)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:25,630 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:327] - Cannot reconnect to [192.168.239.129:6379]: Reconnection attempt exceeded timeout of 60 SECONDS 
+java.util.concurrent.TimeoutException: Reconnection attempt exceeded timeout of 60 SECONDS 
+	at io.lettuce.core.protocol.ReconnectionHandler.lambda$reconnect0$6(ReconnectionHandler.java:203)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:106)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:66)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:26,119 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@5e7418b3]
+2024-04-14 21:11:25,534 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=media-service-dev.yamlonlinexue-projecte94345267cf47da502fea6e0bd78a209devmedia-api-dev.yamlonlinexue-project2b054e547e03b960f5ede5a835394ac6devlogging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devmedia-apionlinexue-projectdevmedia-api.yamlonlinexue-projectdevredis-dev.yamlonlinexue-common73f3b33212e6909444e8afd6062a1f2ddev, tenant=dev}
+2024-04-14 21:11:25,630 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:327] - Cannot reconnect to [192.168.239.129:6379]: Reconnection attempt exceeded timeout of 60 SECONDS 
+java.util.concurrent.TimeoutException: Reconnection attempt exceeded timeout of 60 SECONDS 
+	at io.lettuce.core.protocol.ReconnectionHandler.lambda$reconnect0$6(ReconnectionHandler.java:203)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:106)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:66)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:26,119 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@5e7418b3]
+2024-04-14 21:11:26,120 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@51985537]
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:218] - [channel=0x93421bd4, /192.168.239.1:11656 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:25,630 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:327] - Cannot reconnect to [192.168.239.129:6379]: Reconnection attempt exceeded timeout of 60 SECONDS 
+java.util.concurrent.TimeoutException: Reconnection attempt exceeded timeout of 60 SECONDS 
+	at io.lettuce.core.protocol.ReconnectionHandler.lambda$reconnect0$6(ReconnectionHandler.java:203)
+	at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:106)
+	at io.netty.util.concurrent.DefaultEventExecutor.run(DefaultEventExecutor.java:66)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:235] - [channel=0x93421bd4, /192.168.239.1:11656 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:218] - [channel=0xd5c45708, /192.168.239.1:11657 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-6][CommandHandler.java:198] - [channel=0x076bc848, [id: 0x0e92421f] (inactive), chid=0x25] channelUnregistered()
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:235] - [channel=0xd5c45708, /192.168.239.1:11657 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,120 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@51985537]
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:218] - [channel=0x93421bd4, /192.168.239.1:11656 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-6][ConnectionWatchdog.java:235] - [channel=0x93421bd4, /192.168.239.1:11656 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,120 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:218] - [channel=0xd5c45708, /192.168.239.1:11657 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-6][CommandHandler.java:198] - [channel=0x076bc848, [id: 0x0e92421f] (inactive), chid=0x25] channelUnregistered()
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:235] - [channel=0xd5c45708, /192.168.239.1:11657 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-4][CommandHandler.java:198] - [channel=0xb9162809, [id: 0xac31a2ec] (inactive), chid=0x24] channelUnregistered()
+2024-04-14 21:11:26,121 DEBUG [lettuce-nioEventLoop-4-4][CommandHandler.java:198] - [channel=0xb9162809, [id: 0xac31a2ec] (inactive), chid=0x24] channelUnregistered()
+2024-04-14 21:11:25,533 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=content-api-dev.yamlonlinexue-project40d5d49c080b8243b8e2485de97aca82devcontent-apionlinexue-projectdevlogging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devcontent-api.yamlonlinexue-projectdevcontent-service-dev.yamlonlinexue-project2c1b8497f9786161c103a04b74ba5118devredis-dev.yamlonlinexue-common73f3b33212e6909444e8afd6062a1f2ddev, tenant=dev}
+2024-04-14 21:11:25,533 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:476] - HTTP method: POST, url: http://localhost:8848/nacos/v1/cs/configs/listener, body: {Listening-Configs=content-api-dev.yamlonlinexue-project40d5d49c080b8243b8e2485de97aca82devcontent-apionlinexue-projectdevlogging-dev.yamlonlinexue-commonefc23b3e597ab569c0e273ff3d597020devcontent-api.yamlonlinexue-projectdevcontent-service-dev.yamlonlinexue-project2c1b8497f9786161c103a04b74ba5118devredis-dev.yamlonlinexue-common73f3b33212e6909444e8afd6062a1f2ddev, tenant=dev}
+2024-04-14 21:11:25,533 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:26,123 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@64785603]
+2024-04-14 21:11:26,123 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x015bb102, /192.168.239.1:11658 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:25,709 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 21:11:26,123 DEBUG [com.alibaba.nacos.client.Worker.longPolling.fixed-localhost_8848-dev][NacosRestTemplate.java:494] - Execute via interceptors :[com.alibaba.nacos.client.config.impl.ConfigHttpClientManager$LimiterHttpClientRequestInterceptor@64785603]
+2024-04-14 21:11:26,123 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x015bb102, /192.168.239.1:11658 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 21:11:26,123 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x015bb102, /192.168.239.1:11658 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,124 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0x484d3d76, [id: 0xf4038a4f] (inactive), chid=0x13] channelUnregistered()
+2024-04-14 21:11:26,123 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x015bb102, /192.168.239.1:11658 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 21:11:26,124 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0x484d3d76, [id: 0xf4038a4f] (inactive), chid=0x13] channelUnregistered()

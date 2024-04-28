@@ -37,4 +37,19 @@ public class CourseDictionaryServiceImpl extends ServiceImpl<CourseDictionaryMap
         }
         return Result.ok(list);
     }
+
+    /**
+     * 获取教师的等级
+     *
+     * @return
+     */
+    @Override
+    public Result getTeacherGrade() {
+        List<CourseDictionary> teacherList = list(new LambdaQueryWrapper<CourseDictionary>().like(CourseDictionary::getCode, "th_"));
+        if (teacherList == null) {
+            OnlineXuePlusException.cast("服务器在维护");
+            return Result.fail("服务器在维护!");
+        }
+        return Result.ok(teacherList);
+    }
 }

@@ -54,4 +54,8 @@ public interface CourseBaseService extends IService<CourseBase> {
     void deleteKeysWithPatternUsingScan(String courseBasePage);
 
     Result courseSubmit(CourseBase id);
+
+    Result coursePublish(List<String> ids);
+
+    Result courseOffline(List<String> coursePublish);
 }

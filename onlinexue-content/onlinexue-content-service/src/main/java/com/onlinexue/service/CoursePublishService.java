@@ -2,8 +2,8 @@ package com.onlinexue.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.onlinexue.dto.Result;
-import com.onlinexue.model.dao.CourseBase;
 import com.onlinexue.model.dao.CoursePublish;
+import com.onlinexue.model.dao.CourseReviews;
 import com.onlinexue.model.dto.FormInline;
 
 /**
@@ -11,13 +11,7 @@ import com.onlinexue.model.dto.FormInline;
  * @date 2024/3/13
  */
 public interface CoursePublishService extends IService<CoursePublish> {
-    /**
-     * 发布课程
-     *
-     * @param courseBase
-     * @return
-     */
-    Result coursePublish(CourseBase courseBase);
+
 
     Result coursePublishList(FormInline formInline);
 
@@ -25,5 +19,7 @@ public interface CoursePublishService extends IService<CoursePublish> {
 
     Result getPopularCoursesList();
 
-    Result courseOffline(CoursePublish coursePublish);
+    Result addComment(CourseReviews data);
+
+    Result getReviewsList(Long page, Long limit, String courseId);
 }

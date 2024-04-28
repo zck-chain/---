@@ -1,6 +1,5 @@
 package com.onlinexue.util;
 
-import javax.servlet.http.HttpServletRequest;
 
 public class CourseUtils {
     public static final String NOT_REVIEWED = "202001";//未审核
@@ -14,8 +13,4 @@ public class CourseUtils {
     public static final String OFFLINE = "203003";//下线
 
 
-    public static void getUser(HttpServletRequest request) {
-
-
-    }
 }

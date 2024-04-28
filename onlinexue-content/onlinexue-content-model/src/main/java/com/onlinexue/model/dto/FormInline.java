@@ -17,4 +17,5 @@ public class FormInline {
     private String buyCountSort;//销量
     private String gmtCreateSort;//最新
     private String priceSort;//价格
+    private String courseId;
 }

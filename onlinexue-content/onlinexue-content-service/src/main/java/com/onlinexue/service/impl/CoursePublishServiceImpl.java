@@ -1,6 +1,5 @@
 package com.onlinexue.service.impl;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
@@ -11,7 +10,9 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.onlinexue.dto.Result;
 import com.onlinexue.mapper.CoursePublishMapper;
-import com.onlinexue.model.dao.*;
+import com.onlinexue.model.dao.CourseChapter;
+import com.onlinexue.model.dao.CoursePublish;
+import com.onlinexue.model.dao.CourseReviews;
 import com.onlinexue.model.dto.CourseBasePage;
 import com.onlinexue.model.dto.CourseChapterDto;
 import com.onlinexue.model.dto.FormInline;
@@ -19,14 +20,10 @@ import com.onlinexue.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-import static com.onlinexue.util.CourseUtils.*;
 import static com.onlinexue.util.RedisConstants.Course_Base_Page;
 
 /**
@@ -38,37 +35,15 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
     @Autowired
     private CourseBaseService courseBaseService;//课程基本信息
     @Autowired
-    private CourseMarketService courseMarketService;//课程售价信息
-    @Autowired
-    private CourseTeacherService courseTeacherService;//课程教师信息
-    @Autowired
     private StringRedisTemplate stringRedisTemplate;
     @Autowired
     private CourseCategoryService courseCategoryService;
 
     @Autowired
     private CourseChapterService courseChapterService;//课程视频信息
+    @Autowired
+    private CourseReviewsService courseReviewsService;//评论信息
 
-    @Override
-    @Transactional
-    public Result coursePublish(CourseBase courseBase) {
-        if (ObjectUtil.isEmpty(courseBase)) {
-            return Result.fail("服务器在维护中!");
-        }
-        if (!(REVIEWED).equals(courseBase.getAuditStatus())) {
-            return Result.fail("审核未通过,不能发布!");
-        }
-        courseBase.setStatus(RELEASED);
-        CoursePublish coursePublish = new CoursePublish();
-        //课程基本信息
-        BeanUtil.copyProperties(courseBase, coursePublish);
-        String courseBaseId = courseBase.getId();
-        BeanUtil.copyProperties(courseBase, coursePublish);
-        createPublish(courseBaseId, coursePublish);
-        save(coursePublish);
-        courseBaseService.updateById(courseBase);
-        return Result.ok();
-    }
 
     @Override
     public Result coursePublishList(FormInline formInline) {
@@ -76,7 +51,7 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         int limit = formInline.getLimit();
         String id = formInline.getId();
         String gmtCreateSort = formInline.getGmtCreateSort();//创建时间排序
-        String key = Course_Base_Page + String.valueOf(page) + ":" + String.valueOf(limit);
+        String key = Course_Base_Page + page + ":" + limit;
         if (StrUtil.isNotEmpty(id) || StrUtil.isNotEmpty(gmtCreateSort)) {
             //删除缓存
             courseBaseService.deleteKeysWithPatternUsingScan(key);
@@ -132,9 +107,12 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         List<CourseChapter> courseChapterList = courseChapterService.list(new LambdaQueryWrapper<CourseChapter>().eq(CourseChapter::getCourseId, id));//课程信息
         List<CourseChapterDto> courseChapterDtoList = CourseChapterServiceImpl.getCourseChapterDtoList(courseChapterList);
         courseChapterDtoList.stream().sorted(Comparator.comparing(CourseChapterDto::getSort));
+        //评论信息
+        List<CourseReviews> courseReviewsList = courseReviewsService.list(new LambdaQueryWrapper<CourseReviews>().eq(CourseReviews::getCourseId, id));
         JSONObject jsonObject = new JSONObject();
-        jsonObject.set("Coursedata", coursePublish);
-        jsonObject.set("chapterVideoList", courseChapterDtoList);
+        jsonObject.set("coursedata", coursePublish);//课程基本信息
+        jsonObject.set("chapterVideoList", courseChapterDtoList);//课程信息
+        jsonObject.set("reviewsdata", courseReviewsList);//课程评论信息
         return Result.ok(jsonObject);
     }
 
@@ -145,42 +123,39 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         return Result.ok(list);
     }
 
-    /**
-     * 下架方法
-     *
-     * @param coursePublish
-     * @return
-     */
-    @Transactional
     @Override
-    public Result courseOffline(CoursePublish coursePublish) {
-        if (ObjectUtil.isEmpty(coursePublish)) {
-            return Result.fail("数据为空!");
+    public Result addComment(CourseReviews courseReviews) {
+        if (courseReviews == null) {
+            return Result.fail("请重新登录!");
         }
-        boolean removeById = removeById(coursePublish);
-        if (!removeById) {
-            return Result.fail("下架失败!");
-        }
-        String id = coursePublish.getId();
-        courseBaseService.lambdaUpdate()
-                .set(CourseBase::getStatus, UNRELEASED)
-                .eq(CourseBase::getId, id).update();
+        courseReviewsService.save(courseReviews);
         return Result.ok();
     }
 
-    private void createPublish(String courseBaseId, CoursePublish coursePublish) {
-        CourseMarket courseMarket = courseMarketService.query().eq("course_id", courseBaseId).one();
-        if (!ObjectUtil.isEmpty(courseMarket)) {
-            coursePublish.setPrice(courseMarket.getPrice());
-            coursePublish.setOriginalPrice(courseMarket.getOriginalPrice());
-            coursePublish.setValidDays(courseMarket.getValidDays());
+    @Override
+    public Result getReviewsList(Long page, Long limit, String courseId) {
+        IPage<CourseReviews> ipage = new Page<>(page, limit);
+        LambdaQueryWrapper<CourseReviews> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(CourseReviews::getCourseId, courseId).orderByDesc(CourseReviews::getCreateDate);
+        IPage<CourseReviews> courseReviewsIPage = courseReviewsService.page(ipage, wrapper);
+        List<CourseReviews> recordsCourseReviews = courseReviewsIPage.getRecords();
+        long total = courseReviewsIPage.getTotal();
+        //给页数
+        // 计算总页数
+        int totalPages = (int) Math.ceil((double) total / limit);
+        List<Integer> pages = new ArrayList<>();
+        for (int i = 1; i <= totalPages; i++) {
+            pages.add(i);
         }
-        //获取课程讲师信息
-        CourseTeacher courseTeacher = courseTeacherService.query().eq("course_id", courseBaseId).one();
-        if (!ObjectUtil.isEmpty(courseTeacher)) {
-            coursePublish.setTeacherName(courseTeacher.getTeacherName());
-            coursePublish.setPosition(courseTeacher.getPosition());
-            coursePublish.setPhotograph(courseTeacher.getPhotograph());
-        }
+        Map<String, Object> returnMap = new HashMap<>();
+        returnMap.put("page", page);
+        returnMap.put("total", total);
+        returnMap.put("pages", pages);
+        returnMap.put("recordsCourseReviews", recordsCourseReviews);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.set("reviewsList", returnMap);
+        return Result.ok(jsonObject);
     }
+
+
 }

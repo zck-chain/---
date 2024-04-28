@@ -19,4 +19,6 @@ public interface CourseDictionaryService extends IService<CourseDictionary> {
      * @return
      */
     Result getcourseTeachmode();
+
+    Result getTeacherGrade();
 }

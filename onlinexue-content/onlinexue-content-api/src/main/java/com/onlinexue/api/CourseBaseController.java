@@ -6,6 +6,7 @@ import com.onlinexue.model.dao.CoursePublish;
 import com.onlinexue.model.dto.FormInline;
 import com.onlinexue.service.CourseBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,6 +80,31 @@ public class CourseBaseController {
     @PutMapping("/course/submit")
     public Result courseSubmit(@RequestBody CourseBase courseBase) {
         return courseBaseService.courseSubmit(courseBase);
+    }
+
+    /**
+     * 发布课程
+     *
+     * @param
+     * @return
+     */
+    @PostMapping("/course/publish")
+    public Result coursePublish(@RequestBody List<String> ids) {
+        return courseBaseService.coursePublish(ids);
+    }
+
+
+    /**
+     * 下架
+     *
+     * @param ids
+     * @return
+     */
+    @Transactional
+    @DeleteMapping("/course/publish/Offline")
+    public Result courseOffline(@RequestBody List<String> ids) {
+        return courseBaseService.courseOffline(ids);
+
     }
 
 

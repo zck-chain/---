@@ -14,10 +14,7 @@ import com.onlinexue.mapper.CourseBaseMapper;
 import com.onlinexue.model.dao.*;
 import com.onlinexue.model.dto.CourseBasePage;
 import com.onlinexue.model.dto.FormInline;
-import com.onlinexue.service.CourseBaseService;
-import com.onlinexue.service.CourseDictionaryService;
-import com.onlinexue.service.CourseMarketService;
-import com.onlinexue.service.CourseTeacherService;
+import com.onlinexue.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisCallback;
@@ -34,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import static com.onlinexue.util.CourseUtils.NOW_REVIEWED;
+import static com.onlinexue.util.CourseUtils.*;
 import static com.onlinexue.util.RedisConstants.Course_Base_Page;
 import static com.onlinexue.util.RedisConstants.LOGIN_MASTER_KEY;
 
@@ -48,6 +45,8 @@ public class CourseBaseServiceImpl extends ServiceImpl<CourseBaseMapper, CourseB
     private CourseDictionaryService courseDictionaryService;//课程级别信息
     @Autowired
     private CourseTeacherService courseTeacherService;//课程教师信息
+    @Autowired
+    private CoursePublishService coursePublishService;//课程发布信息
 
     /**
      * 查询基本课程信息
@@ -243,8 +242,6 @@ public class CourseBaseServiceImpl extends ServiceImpl<CourseBaseMapper, CourseB
      *
      * @return
      */
-
-
     public void deleteKeysWithPatternUsingScan(String prefix) {
         List<String> keysToDelete = new ArrayList<>();
         // 构造匹配模式
@@ -280,5 +277,65 @@ public class CourseBaseServiceImpl extends ServiceImpl<CourseBaseMapper, CourseB
         courseBase.setAuditStatus(NOW_REVIEWED);
         updateById(courseBase);
         return Result.ok();
+    }
+
+    @Override
+    @Transactional
+    public Result coursePublish(List<String> ids) {
+        if (ObjectUtil.isEmpty(ids)) {
+            return Result.fail("服务器在维护中!");
+        }
+        List<CourseBase> courseBaseList = listByIds(ids);
+        List<CoursePublish> coursePublishList = new ArrayList<>();
+        for (CourseBase courseBase : courseBaseList) {
+            if (!(REVIEWED).equals(courseBase.getAuditStatus())) {
+                return Result.fail("审核未通过,不能发布!");
+            }
+            courseBase.setStatus(RELEASED);
+            CoursePublish coursePublish = new CoursePublish();
+            BeanUtil.copyProperties(courseBase, coursePublish);
+            String courseBaseId = courseBase.getId();
+            createPublish(courseBaseId, coursePublish);
+            coursePublishList.add(coursePublish);
+        }
+        coursePublishService.saveBatch(coursePublishList);
+        updateBatchById(courseBaseList);
+        return Result.ok();
+    }
+
+    @Override
+    @Transactional
+    public Result courseOffline(List<String> ids) {
+        if (ObjectUtil.isEmpty(ids)) {
+            return Result.fail("服务器在维护中!");
+        }
+        List<CourseBase> courseBaseList = listByIds(ids);
+        List<String> coursePublishIds = new ArrayList<>();
+        for (CourseBase courseBase : courseBaseList) {
+            if (!(RELEASED).equals(courseBase.getStatus())) {
+                return Result.fail("课程未发布!");
+            }
+            courseBase.setStatus(UNRELEASED);
+            coursePublishIds.add(courseBase.getId());
+        }
+        updateBatchById(courseBaseList);
+        coursePublishService.removeBatchByIds(coursePublishIds);
+        return Result.ok();
+    }
+
+    private void createPublish(String courseBaseId, CoursePublish coursePublish) {
+        CourseMarket courseMarket = courseMarketService.query().eq("course_id", courseBaseId).one();
+        if (!ObjectUtil.isEmpty(courseMarket)) {
+            coursePublish.setPrice(courseMarket.getPrice());
+            coursePublish.setOriginalPrice(courseMarket.getOriginalPrice());
+            coursePublish.setValidDays(courseMarket.getValidDays());
+        }
+        //获取课程讲师信息
+        CourseTeacher courseTeacher = courseTeacherService.query().eq("course_id", courseBaseId).one();
+        if (!ObjectUtil.isEmpty(courseTeacher)) {
+            coursePublish.setTeacherName(courseTeacher.getTeacherName());
+            coursePublish.setPosition(courseTeacher.getPosition());
+            coursePublish.setPhotograph(courseTeacher.getPhotograph());
+        }
     }
 }

@@ -1,12 +1,10 @@
 package com.onlinexue.api;
 
 import com.onlinexue.dto.Result;
-import com.onlinexue.model.dao.CourseBase;
-import com.onlinexue.model.dao.CoursePublish;
+import com.onlinexue.model.dao.CourseReviews;
 import com.onlinexue.model.dto.FormInline;
 import com.onlinexue.service.CoursePublishService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,23 +18,12 @@ public class CoursePublishController {
     @Autowired
     private CoursePublishService coursePublishService;
 
+
     /**
-     * 发布课程
-     *
-     * @param courseBase
+     * 按id查询课程信息
+     * @param id
      * @return
      */
-    @PostMapping("/course/publish")
-    public Result coursePublish(@RequestBody CourseBase courseBase) {
-        return coursePublishService.coursePublish(courseBase);
-    }
-
-    @PostMapping("/course/publish/list")
-    public Result coursePublishList(@RequestBody FormInline formInline) {
-        return coursePublishService.coursePublishList(formInline);
-
-    }
-
     @GetMapping("/course/publish/{id}")
     public Result getCoursePublish(@PathVariable String id) {
         return coursePublishService.getCoursePublish(id);
@@ -52,10 +39,38 @@ public class CoursePublishController {
         return coursePublishService.getPopularCoursesList();
     }
 
-    @Transactional
-    @DeleteMapping("/course/publish/Offline")
-    public Result courseOffline(@RequestBody CoursePublish coursePublish) {
-        return coursePublishService.courseOffline(coursePublish);
-
+    /**
+     * 获取发布课程的信息
+     *
+     * @param formInline
+     * @return
+     */
+    @PostMapping("/course/publish/list")
+    public Result getPublishList(@RequestBody FormInline formInline) {
+        return coursePublishService.coursePublishList(formInline);
     }
+
+    /**
+     * 添加评论
+     *
+     * @return
+     */
+    @PostMapping("/publish/add/comment")
+    public Result addComment(@RequestBody CourseReviews courseReviews) {
+        return coursePublishService.addComment(courseReviews);
+    }
+
+    /**
+     * 获取课程评论的信息
+     *
+     * @param page
+     * @param limit
+     * @param courseId
+     * @return
+     */
+    @GetMapping("/reviews/{page}/{limit}/{courseId}")
+    public Result getReviewsList(@PathVariable Long page, @PathVariable Long limit, @PathVariable String courseId) {
+        return coursePublishService.getReviewsList(page, limit,courseId);
+    }
+
 }

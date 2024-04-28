@@ -1,0 +1,184 @@
+2024-04-14 14:09:34,345 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,340 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,345 WARN [lettuce-nioEventLoop-4-4][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,345 WARN [lettuce-nioEventLoop-4-4][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: Software caused connection abort: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Software caused connection abort: no further information: /192.168.239.129:6379
+Caused by: java.net.SocketException: Software caused connection abort: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:218] - [channel=0x0fbd32c0, /192.168.239.1:13138 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:235] - [channel=0x0fbd32c0, /192.168.239.1:13138 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0xefa700f6, /192.168.239.1:13027 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0xefa700f6, /192.168.239.1:13027 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:218] - [channel=0x0fbd32c0, /192.168.239.1:13138 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-4][ConnectionWatchdog.java:235] - [channel=0x0fbd32c0, /192.168.239.1:13138 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 14:09:34,355 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0xefa700f6, /192.168.239.1:13027 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0xefa700f6, /192.168.239.1:13027 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 2, delay 2ms
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0x924eedc4, [id: 0xcd7f2d28] (inactive), chid=0x4] channelUnregistered()
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-4][CommandHandler.java:198] - [channel=0xddb456e5, [id: 0xd3ae3c43] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-4][CommandHandler.java:198] - [channel=0xddb456e5, [id: 0xd3ae3c43] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,356 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0x924eedc4, [id: 0xcd7f2d28] (inactive), chid=0x4] channelUnregistered()
+2024-04-14 14:09:34,375 INFO [lettuce-eventExecutorLoop-1-4][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,375 INFO [lettuce-eventExecutorLoop-1-4][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,376 DEBUG [lettuce-eventExecutorLoop-1-4][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,376 DEBUG [lettuce-eventExecutorLoop-1-4][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,377 DEBUG [lettuce-eventExecutorLoop-1-4][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,377 DEBUG [lettuce-eventExecutorLoop-1-4][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,395 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:181] - [channel=0xc54b0eae, [id: 0x8991a039] (inactive), chid=0x3] channelRegistered()
+2024-04-14 14:09:34,395 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:181] - [channel=0xc54b0eae, [id: 0x8991a039] (inactive), chid=0x3] channelRegistered()
+2024-04-14 14:09:34,398 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: No route to host: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.239.129:6379
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,398 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: No route to host: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.239.129:6379
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,400 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x468ecc27, /192.168.239.1:13087 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,400 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x468ecc27, /192.168.239.1:13087 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,401 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x468ecc27, /192.168.239.1:13087 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 3, delay 4ms
+2024-04-14 14:09:34,401 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x468ecc27, /192.168.239.1:13087 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 3, delay 4ms
+2024-04-14 14:09:34,401 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0xc54b0eae, [id: 0x8991a039] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,401 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0xc54b0eae, [id: 0x8991a039] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,410 DEBUG [com.alibaba.nacos.naming.failover][FailoverReactor.java:147] - failover switch is not found, failover00-00---000-VIPSRV_FAILOVER_SWITCH-000---00-00
+2024-04-14 14:09:34,410 DEBUG [com.alibaba.nacos.naming.failover][FailoverReactor.java:147] - failover switch is not found, failover00-00---000-VIPSRV_FAILOVER_SWITCH-000---00-00
+2024-04-14 14:09:34,410 INFO [lettuce-eventExecutorLoop-1-4][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,410 INFO [lettuce-eventExecutorLoop-1-4][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,411 DEBUG [lettuce-eventExecutorLoop-1-4][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,411 DEBUG [lettuce-eventExecutorLoop-1-4][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,412 DEBUG [lettuce-eventExecutorLoop-1-4][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,412 DEBUG [lettuce-eventExecutorLoop-1-4][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,440 INFO [lettuce-eventExecutorLoop-1-7][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,440 INFO [lettuce-eventExecutorLoop-1-6][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,440 INFO [lettuce-eventExecutorLoop-1-7][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,440 INFO [lettuce-eventExecutorLoop-1-6][AbstractInternalLogger.java:171] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,441 DEBUG [lettuce-eventExecutorLoop-1-7][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,441 DEBUG [lettuce-eventExecutorLoop-1-6][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,441 DEBUG [lettuce-eventExecutorLoop-1-7][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,441 DEBUG [lettuce-eventExecutorLoop-1-6][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,442 DEBUG [lettuce-eventExecutorLoop-1-7][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,442 DEBUG [lettuce-eventExecutorLoop-1-7][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,443 DEBUG [lettuce-eventExecutorLoop-1-6][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,443 DEBUG [lettuce-eventExecutorLoop-1-6][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,454 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:181] - [channel=0xb047c41d, [id: 0x60a9b4ef] (inactive), chid=0x3] channelRegistered()
+2024-04-14 14:09:34,454 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:181] - [channel=0xb047c41d, [id: 0x60a9b4ef] (inactive), chid=0x3] channelRegistered()
+2024-04-14 14:09:34,458 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: No route to host: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.239.129:6379
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,458 WARN [lettuce-nioEventLoop-4-3][AbstractInternalLogger.java:105] - Cannot reconnect to [192.168.239.129:6379]: No route to host: no further information: /192.168.239.129:6379
+io.netty.channel.AbstractChannel$AnnotatedNoRouteToHostException: No route to host: no further information: /192.168.239.129:6379
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2024-04-14 14:09:34,460 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x55bda341, /192.168.239.1:2050 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,460 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x55bda341, /192.168.239.1:2050 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 3, delay 4ms
+2024-04-14 14:09:34,460 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:218] - [channel=0x55bda341, /192.168.239.1:2050 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] scheduleReconnect()
+2024-04-14 14:09:34,460 DEBUG [lettuce-nioEventLoop-4-3][ConnectionWatchdog.java:235] - [channel=0x55bda341, /192.168.239.1:2050 -> /192.168.239.129:6379, last known addr=/192.168.239.129:6379] Reconnect attempt 3, delay 4ms
+2024-04-14 14:09:34,461 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0xb047c41d, [id: 0x60a9b4ef] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,461 DEBUG [lettuce-nioEventLoop-4-3][CommandHandler.java:198] - [channel=0xb047c41d, [id: 0x60a9b4ef] (inactive), chid=0x3] channelUnregistered()
+2024-04-14 14:09:34,474 DEBUG [lettuce-nioEventLoop-4-5][CommandHandler.java:181] - [channel=0x48fcbcca, [id: 0xd0b5cdba] (inactive), chid=0x5] channelRegistered()
+2024-04-14 14:09:34,474 DEBUG [lettuce-nioEventLoop-4-5][CommandHandler.java:181] - [channel=0x48fcbcca, [id: 0xd0b5cdba] (inactive), chid=0x5] channelRegistered()
+2024-04-14 14:09:34,476 DEBUG [lettuce-eventExecutorLoop-1-5][AbstractInternalLogger.java:168] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,477 DEBUG [lettuce-nioEventLoop-4-6][CommandHandler.java:181] - [channel=0xa2296a8d, [id: 0xa6cc52a8] (inactive), chid=0x6] channelRegistered()
+2024-04-14 14:09:34,477 DEBUG [lettuce-nioEventLoop-4-6][CommandHandler.java:181] - [channel=0xa2296a8d, [id: 0xa6cc52a8] (inactive), chid=0x6] channelRegistered()
+2024-04-14 14:09:34,476 DEBUG [lettuce-eventExecutorLoop-1-5][AbstractInternalLogger.java:168] - Reconnecting, last destination was 192.168.239.129:6379
+2024-04-14 14:09:34,477 DEBUG [lettuce-eventExecutorLoop-1-5][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,477 DEBUG [lettuce-eventExecutorLoop-1-5][RedisClient.java:775] - Resolved SocketAddress 192.168.239.129:6379 using RedisURI [host='192.168.239.129', port=6379]
+2024-04-14 14:09:34,479 DEBUG [lettuce-eventExecutorLoop-1-5][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
+2024-04-14 14:09:34,479 DEBUG [lettuce-eventExecutorLoop-1-5][ReconnectionHandler.java:126] - Reconnecting to Redis at 192.168.239.129:6379
