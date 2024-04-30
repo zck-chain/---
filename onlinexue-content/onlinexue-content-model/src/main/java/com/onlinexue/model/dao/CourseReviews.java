@@ -48,6 +48,12 @@ public class CourseReviews {
      */
     private String respondentsId;
 
+
+    /**
+     * 文章id
+     */
+    private String articlesId;
+
     /**
      * 创建时间
      */
