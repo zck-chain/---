@@ -73,4 +73,9 @@ public class CoursePublishController {
         return coursePublishService.getReviewsList(page, limit,courseId);
     }
 
+    @PostMapping("/selectCouse")
+    public Result selectCouse(String courseName) {
+        return coursePublishService.selectCouse(courseName);
+    }
+
 }

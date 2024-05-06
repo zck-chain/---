@@ -22,4 +22,6 @@ public interface CoursePublishService extends IService<CoursePublish> {
     Result addComment(CourseReviews data);
 
     Result getReviewsList(Long page, Long limit, String courseId);
+
+    Result selectCouse(String courseName);
 }

@@ -1,8 +1,10 @@
 package com.onlinexue.api;
 
 import com.onlinexue.dto.Result;
+import com.onlinexue.model.dto.FormInline;
 import com.onlinexue.service.CourseArticlesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,9 +28,19 @@ public class CourseArticlesController {
      * @return
      */
     @PostMapping("/setArticles")
-    public Result setArticles(@RequestBody Map<String, String> articles, HttpServletRequest request) {
-        return courseArticlesService.setArticles(articles, request);
-
+    public Result setArticles(@RequestBody Map<String, Object> articles) {
+        return courseArticlesService.setArticles(articles);
     }
+
+    @PostMapping("/getArticles")
+    public Result getArticles(@RequestBody FormInline formInline) {
+        return courseArticlesService.getArticles(formInline);
+    }
+
+    @PostMapping("/articles/{articleId}/comments")
+    public Result setComments(@PathVariable String articleId, @RequestBody Map<String, String> comment, HttpServletRequest request) {
+        return courseArticlesService.setComments(articleId, comment, request);
+    }
+
 }
 

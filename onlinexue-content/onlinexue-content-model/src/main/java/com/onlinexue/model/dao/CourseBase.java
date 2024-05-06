@@ -106,4 +106,21 @@ public class CourseBase implements Serializable {
      */
     private String status;
 
+
+    /**
+     * 购买数
+     */
+    private Integer numberOfpurchases;
+
+
+    /**
+     * 课时数
+     */
+    private Integer numberOflessons;
+
+    /**
+     * 浏览数
+     */
+    private Integer numberOfviews;
+
 }

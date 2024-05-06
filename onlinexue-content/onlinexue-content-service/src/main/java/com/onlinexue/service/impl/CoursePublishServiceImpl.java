@@ -148,7 +148,7 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
             pages.add(i);
         }
         Map<String, Object> returnMap = new HashMap<>();
-        returnMap.put("page", page);
+        returnMap.put("current", page);
         returnMap.put("total", total);
         returnMap.put("pages", pages);
         returnMap.put("recordsCourseReviews", recordsCourseReviews);
@@ -157,5 +157,12 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         return Result.ok(jsonObject);
     }
 
-
+    @Override
+    public Result selectCouse(String courseName) {
+        if (StrUtil.isEmpty(courseName)) {
+            return Result.fail("请输入查询课程");
+        }
+        List<CoursePublish> coursePublishList = list(new LambdaQueryWrapper<CoursePublish>().like(CoursePublish::getName, courseName));
+        return Result.ok(coursePublishList);
+    }
 }

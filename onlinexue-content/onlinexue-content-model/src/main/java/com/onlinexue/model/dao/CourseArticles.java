@@ -24,6 +24,12 @@ public class CourseArticles {
 
     private String content;
 
+    private String userId;
+
+    private String userName;
+
+    private String icon;
+
     /**
      * 创建时间
      */
