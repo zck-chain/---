@@ -5,11 +5,13 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.onlinexue.dto.Result;
 import com.onlinexue.mapper.CoursePublishMapper;
+import com.onlinexue.model.dao.CourseBase;
 import com.onlinexue.model.dao.CourseChapter;
 import com.onlinexue.model.dao.CoursePublish;
 import com.onlinexue.model.dao.CourseReviews;
@@ -20,9 +22,11 @@ import com.onlinexue.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.onlinexue.util.RedisConstants.Course_Base_Page;
 
@@ -44,6 +48,7 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
     @Autowired
     private CourseReviewsService courseReviewsService;//评论信息
 
+    private static AtomicInteger numberofviews;//浏览数
 
     @Override
     public Result coursePublishList(FormInline formInline) {
@@ -93,6 +98,7 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
     }
 
     @Override
+    @Transactional
     public Result getCoursePublish(String id) {
         if (StrUtil.isEmpty(id)) {
             return Result.fail("数据有问题!");
@@ -113,6 +119,11 @@ public class CoursePublishServiceImpl extends ServiceImpl<CoursePublishMapper, C
         jsonObject.set("coursedata", coursePublish);//课程基本信息
         jsonObject.set("chapterVideoList", courseChapterDtoList);//课程信息
         jsonObject.set("reviewsdata", courseReviewsList);//课程评论信息
+        //获取浏览数
+        numberofviews = new AtomicInteger(coursePublish.getNumberofviews());
+        int addAndGet = numberofviews.addAndGet(1);
+        update(new LambdaUpdateWrapper<CoursePublish>().eq(CoursePublish::getId, id).set(CoursePublish::getNumberofviews, addAndGet));
+        courseBaseService.update(new LambdaUpdateWrapper<CourseBase>().eq(CourseBase::getId, id).set(CourseBase::getNumberofviews, addAndGet));
         return Result.ok(jsonObject);
     }
 

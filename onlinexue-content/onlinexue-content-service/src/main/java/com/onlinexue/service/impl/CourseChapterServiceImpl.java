@@ -2,12 +2,16 @@ package com.onlinexue.service.impl;
 
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.onlinexue.dto.Result;
 import com.onlinexue.mapper.CourseChapterMaper;
+import com.onlinexue.model.dao.CourseBase;
 import com.onlinexue.model.dao.CourseChapter;
 import com.onlinexue.model.dto.CourseChapterDto;
+import com.onlinexue.service.CourseBaseService;
 import com.onlinexue.service.CourseChapterService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +26,8 @@ import java.util.stream.Collectors;
 @Service
 public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, CourseChapter> implements CourseChapterService {
 
+    @Autowired
+    private CourseBaseService courseBaseService;
     public static List<CourseChapterDto> getCourseChapterDtoList(List<CourseChapter> courseChapterList) {
         List<CourseChapterDto> courseChapterDtoList = new ArrayList<>();
         courseChapterList.forEach(item -> {
@@ -29,14 +35,12 @@ public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, Co
             BeanUtil.copyProperties(item, chapterDto);
             courseChapterDtoList.add(chapterDto);
         });
-
-// 构建章节映射表并按sort属性排序
+        // 构建章节映射表并按sort属性排序
         Map<String, CourseChapterDto> courseChapterMap = courseChapterDtoList.stream()
                 .filter(item -> "0".equals(item.getParentId()))
                 .sorted(Comparator.comparing(CourseChapterDto::getSort))
                 .collect(Collectors.toMap(CourseChapterDto::getId, Function.identity(), (key1, key2) -> key2, LinkedHashMap::new));
-
-// 将子章节添加到父章节的子章节列表中
+        // 将子章节添加到父章节的子章节列表中
         courseChapterList.forEach(item -> {
             String parentId = item.getParentId();
             if (courseChapterMap.containsKey(parentId)) {
@@ -47,8 +51,7 @@ public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, Co
                 courseChapterDto.getSections().add(item);
             }
         });
-
-// 对小节列表按sort属性排序
+        // 对小节列表按sort属性排序
         courseChapterMap.values().forEach(chapterDto -> {
             if (chapterDto.getSections() != null) {
                 chapterDto.getSections().sort(Comparator.comparing(CourseChapter::getSort));
@@ -78,6 +81,7 @@ public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, Co
         // 创建一个存储生成的章节列表的结果集
         List<CourseChapter> resultList = new ArrayList<>();
         Integer parentCount = 0; // 每个小节可以放入1000个
+        Integer numberOflessons = 0;//课时数
         // 遍历课程章节DTO列表
         for (CourseChapterDto chapterDto : courseChapterDtoList) {
             // 生成父章节ID
@@ -95,6 +99,7 @@ public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, Co
             int childCount = 0;
             // 遍历小节列表
             for (CourseChapter section : chapterDto.getSections()) {
+                numberOflessons++;
                 // 创建小节对象并设置属性
                 CourseChapter childChapter = new CourseChapter();
                 childChapter.setId(UUID.randomUUID().toString());
@@ -108,6 +113,9 @@ public class CourseChapterServiceImpl extends ServiceImpl<CourseChapterMaper, Co
                 resultList.add(childChapter);
             }
         }
+        UpdateWrapper<CourseBase> wrapper = new UpdateWrapper<>();
+        wrapper.eq("id", courseId).set("numberOflessons", numberOflessons);
+        courseBaseService.update(wrapper);
         saveBatch(resultList);
         return Result.ok();
     }

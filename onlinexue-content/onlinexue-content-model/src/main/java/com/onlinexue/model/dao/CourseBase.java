@@ -110,17 +110,17 @@ public class CourseBase implements Serializable {
     /**
      * 购买数
      */
-    private Integer numberOfpurchases;
+    private Integer numberofpurchases;
 
 
     /**
      * 课时数
      */
-    private Integer numberOflessons;
+    private Integer numberoflessons;
 
     /**
      * 浏览数
      */
-    private Integer numberOfviews;
+    private Integer numberofviews;
 
 }
